@@ -1,0 +1,54 @@
+Spark Source-Available License
+Copyright (c) 2026 Denizprof. All rights reserved.
+
+This is NOT an open-source license. The source code is published so people
+can see how Spark works and trust what it does. Everything not expressly
+allowed below is reserved by the copyright holder.
+
+1. What you MAY do
+   a. Download the official releases of Spark from the official repository
+      (https://github.com/Denizprof/spark) and use them, free of charge, on
+      your own computers, for personal or work use.
+   b. Read the source code and learn from it.
+   c. Build Spark from this source for your own personal use only.
+   d. Write plugins for Spark and share your own plugin files, as long as
+      they do not contain code copied from this repository.
+   e. Open issues and send pull requests to the official repository. By
+      sending a contribution you agree that it is licensed to the copyright
+      holder under these same terms, with the right to use, change and
+      relicense it.
+
+2. What you may NOT do without written permission from the copyright holder
+   a. Copy, re-upload, mirror or redistribute Spark or any part of its
+      source code, assets or builds, in original or modified form.
+   b. Publish modified versions, forks or derivative works, or make an app,
+      extension or service based on Spark's code, design or assets.
+   c. Sell Spark, include it in a paid product or service, or use it to make
+      money in any other way.
+   d. Use the name "Spark" together with the ✻ logo, Spark's screenshots,
+      or Spark's code to advertise, promote or market any other product,
+      service, channel or project, or to make yourself or any other project
+      look like the author of Spark.
+   e. Remove or change this license or the copyright notice.
+
+   Forking this repository inside GitHub is only allowed as far as GitHub's
+   Terms of Service require for public repositories (for example, to send a
+   pull request). A fork does not give you any of the rights in section 2.
+
+3. Talking about Spark is fine. You may write reviews, articles and videos
+   about Spark and link to the official repository, as long as you do not
+   redistribute the app or the code yourself and do not suggest that you
+   made it or that it is endorsed by you.
+
+4. No warranty. SPARK IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+   EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+   MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+   IN NO EVENT SHALL THE COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR
+   OTHER LIABILITY ARISING FROM, OUT OF OR IN CONNECTION WITH SPARK OR ITS
+   USE.
+
+5. If you break these terms, your permission to use Spark ends
+   automatically.
+
+For permission to do anything not allowed here, open an issue on the
+official repository.

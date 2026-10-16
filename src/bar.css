@@ -1,0 +1,134 @@
+:root {
+  --bg: rgba(250, 251, 253, 0.97);
+  --border: rgba(20, 24, 40, 0.10);
+  --text: #23252e;
+  --muted: #6f7689;
+  --faint: #a3a9b8;
+  --accent: #d97757;
+  --accent-soft: rgba(217, 119, 87, 0.12);
+  --select: rgba(20, 24, 40, 0.06);
+  --font: "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: rgba(30, 31, 36, 0.97);
+    --border: rgba(255, 255, 255, 0.09);
+    --text: #eceef3;
+    --muted: #9aa1b2;
+    --faint: #686e7c;
+    --select: rgba(255, 255, 255, 0.07);
+  }
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  background: transparent;
+  overflow: hidden;
+  font-family: var(--font);
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* room around the pill so its shadow never touches the window edge */
+body { padding: 16px 40px 44px; }
+
+#pill {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  box-shadow: 0 10px 28px rgba(15, 18, 30, 0.18), 0 1px 4px rgba(15, 18, 30, 0.08);
+  overflow: hidden;
+  animation: pop 140ms ease-out;
+}
+
+@keyframes pop {
+  from { transform: translateY(-4px) scale(0.985); opacity: 0; }
+  to { transform: none; opacity: 1; }
+}
+
+#row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  height: 60px;
+  padding: 0 20px 0 22px;
+}
+
+#icon {
+  color: var(--accent);
+  font-size: 24px;
+  line-height: 1;
+  transition: transform 400ms ease;
+}
+#pill.busy #icon { animation: spin 1.1s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+#input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--text);
+  font: 400 17px var(--font);
+  caret-color: var(--accent);
+}
+#input::placeholder { color: var(--faint); }
+
+#preview {
+  color: var(--accent);
+  font: 600 15px var(--font);
+  white-space: nowrap;
+  max-width: 40%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#hint {
+  font: 500 11px var(--font);
+  color: var(--faint);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 2px 6px;
+}
+
+#suggestions {
+  list-style: none;
+  margin: 0;
+  padding: 4px 8px 10px;
+  border-top: 1px solid var(--border);
+}
+#suggestions li {
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+  padding: 7px 14px;
+  border-radius: 10px;
+  cursor: default;
+  font-size: 13.5px;
+}
+#suggestions li.active { background: var(--select); }
+#suggestions .name { color: var(--text); font-weight: 600; min-width: 64px; }
+#suggestions .help { color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+#suggestions li.active .name::before { content: "› "; color: var(--accent); }
+
+#output {
+  margin: 0;
+  padding: 2px 24px 18px;
+  color: var(--muted);
+  font: 400 14px/1.55 var(--font);
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-y: auto;
+  -webkit-user-select: text;
+  user-select: text;
+  border-top: 1px solid transparent;
+}
+#output.error { color: #c0533a; }
+#output.mono { font: 13px/1.6 "Cascadia Mono", "SF Mono", Menlo, Consolas, "DejaVu Sans Mono", monospace; }
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 8px; }

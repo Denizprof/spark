@@ -1,0 +1,7 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "default",
+  "description": "Spark's own windows only need events; everything else goes through Spark's Rust commands.",
+  "windows": ["bar", "settings"],
+  "permissions": ["core:default"]
+}

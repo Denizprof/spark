@@ -1,0 +1,22 @@
+# Dependencies & builds
+node_modules/
+src-tauri/target/
+src-tauri/gen/
+dist/
+
+# Your personal Spark data (notes, to-dos, settings) - never commit it
+spark_data/
+
+# Local-only files
+LAUNCH_KIT.md
+*.log
+
+# Editors / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Built installers
+*.exe
+*.msi

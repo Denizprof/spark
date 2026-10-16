@@ -1,0 +1,17 @@
+{
+  "name": "spark",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Spark - a tiny, fast hotkey command bar for Windows, macOS and Linux.",
+  "type": "module",
+  "license": "SEE LICENSE IN LICENSE",
+  "scripts": {
+    "test": "node --test test/",
+    "dev": "tauri dev",
+    "build": "tauri build",
+    "icons": "node scripts/make-icon.mjs && tauri icon scripts/icon-1024.png"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2"
+  }
+}

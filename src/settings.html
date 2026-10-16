@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Spark Settings</title>
+  <link rel="stylesheet" href="settings.css">
+</head>
+<body>
+  <main>
+    <div class="brand">
+      <span class="glyph" aria-hidden="true">✻</span>
+      <span class="name">Spark</span>
+      <span class="version" id="version"></span>
+    </div>
+
+    <h2>General</h2>
+    <div class="group">
+      <div class="row">
+        <div class="label">
+          <span>Shortcut</span>
+          <small>Opens the bar from anywhere</small>
+        </div>
+        <button type="button" id="hotkey" class="keys" aria-label="Change shortcut"></button>
+      </div>
+      <label class="row" for="autostart">
+        <div class="label">
+          <span>Open at login</span>
+          <small>Starts quietly in the tray</small>
+        </div>
+        <span class="switch"><input type="checkbox" id="autostart"><i></i></span>
+      </label>
+    </div>
+
+    <h2>Quick links <small>type the name in the bar to open it</small></h2>
+    <div class="group" id="links"></div>
+    <button type="button" class="add" id="add-link">+ Add link</button>
+
+    <details id="ollama">
+      <summary>
+        <span>Ollama</span>
+        <small>local AI for <kbd>ask</kbd></small>
+      </summary>
+      <div class="group">
+        <label class="row" for="ollama_url">
+          <div class="label"><span>Server</span></div>
+          <input id="ollama_url" spellcheck="false" placeholder="http://localhost:11434">
+        </label>
+        <label class="row" for="ollama_model">
+          <div class="label"><span>Model</span></div>
+          <input id="ollama_model" spellcheck="false" placeholder="llama3.1">
+        </label>
+      </div>
+      <p class="note">No Ollama yet? Get it at <a href="#" id="ollama-link">ollama.com</a>, then run <kbd>ollama pull llama3.1</kbd>.</p>
+    </details>
+  </main>
+
+  <footer>
+    <p id="status" role="alert"></p>
+    <button type="button" id="data" class="text">Data folder</button>
+    <span class="spacer"></span>
+    <button type="button" id="quit" class="quiet">Quit</button>
+    <button type="button" id="save" class="go">Save &amp; start</button>
+  </footer>
+
+  <script type="module" src="settings.js"></script>
+</body>
+</html>

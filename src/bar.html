@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Spark</title>
+  <link rel="stylesheet" href="bar.css">
+</head>
+<body>
+  <main id="pill">
+    <div id="row">
+      <span id="icon" aria-hidden="true">✻</span>
+      <input id="input" type="text" placeholder="What can I help you with today?"
+             spellcheck="false" autocomplete="off" aria-label="Command">
+      <span id="preview" hidden></span>
+      <kbd id="hint">esc</kbd>
+    </div>
+    <ul id="suggestions" hidden></ul>
+    <pre id="output" hidden></pre>
+  </main>
+  <script type="module" src="bar.js"></script>
+</body>
+</html>

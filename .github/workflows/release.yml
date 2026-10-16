@@ -1,0 +1,76 @@
+# Builds Spark for Windows, macOS (Apple Silicon + Intel) and Linux and attaches
+# the installers to a draft GitHub Release. Run it by pushing a tag like v1.0.0,
+# or by hand from the Actions tab.
+name: Release
+
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  test:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm test
+
+  build:
+    needs: test
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - platform: windows-latest
+            args: ''
+          - platform: macos-latest
+            args: '--target aarch64-apple-darwin'
+          - platform: macos-latest
+            args: '--target x86_64-apple-darwin'
+          - platform: ubuntu-22.04
+            args: ''
+    runs-on: ${{ matrix.platform }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Linux build dependencies
+        if: matrix.platform == 'ubuntu-22.04'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libwebkit2gtk-4.1-dev libappindicator3-dev librsvg2-dev patchelf libxdo-dev
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: ${{ matrix.platform == 'macos-latest' && 'aarch64-apple-darwin,x86_64-apple-darwin' || '' }}
+
+      - uses: swatinem/rust-cache@v2
+        with:
+          workspaces: './src-tauri -> target'
+
+      - run: npm ci
+
+      - uses: tauri-apps/tauri-action@v0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tagName: ${{ github.ref_type == 'tag' && github.ref_name || 'v__VERSION__' }}
+          releaseName: 'Spark v__VERSION__'
+          releaseBody: |
+            Download the file for your computer:
+            - **Windows 10/11:** `Spark_x.y.z_x64-setup.exe`
+            - **macOS (Apple Silicon M1–M4):** `Spark_x.y.z_aarch64.dmg`
+            - **macOS (Intel):** `Spark_x.y.z_x64.dmg`
+            - **Linux:** `.AppImage` (any distro), `.deb` (Ubuntu/Debian) or `.rpm` (Fedora)
+          releaseDraft: true
+          prerelease: false
+          args: ${{ matrix.args }}
