@@ -4,9 +4,11 @@
   "private": true,
   "description": "Spark - a tiny, fast hotkey command bar for Windows, macOS and Linux.",
   "type": "module",
+  "engines": { "node": ">=20" },
   "license": "SEE LICENSE IN LICENSE",
   "scripts": {
     "test": "node --test test/engine.test.js",
+    "tauri": "tauri",
     "dev": "tauri dev",
     "build": "tauri build",
     "icons": "node scripts/make-icon.mjs && tauri icon scripts/icon-1024.png"

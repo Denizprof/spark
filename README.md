@@ -24,6 +24,7 @@ Windows 10 / 11 · macOS · Linux · light enough for old laptops
 - **115+ commands** built in, and you can add your own with a few lines of JavaScript.
 - **Private:** your notes, to-dos and settings stay on your computer. The AI runs locally through [Ollama](https://ollama.com).
 - **Easy on the eyes:** a soft floating bar with automatic light and dark mode. Drag it anywhere with the middle mouse button.
+- **Yours to customize:** change the shortcut, add your own quick links, and write your own commands. See [Make it yours](#make-it-yours).
 
 ## Download
 
@@ -83,6 +84,17 @@ ask how do I center a div
 
 `ask` sends your question to [Ollama](https://ollama.com) running on your own machine, so nothing leaves your computer. Install Ollama, run `ollama pull llama3.1`, and you're set. You can change the server and model under **Settings → Ollama settings**.
 
+## Make it yours
+
+Spark is built to be customized. You don't need to know how to code for the first three:
+
+| What | How |
+| --- | --- |
+| **Shortcut** | Settings → Shortcut. Click it and press any key combination. |
+| **Quick links** | Settings → Quick links → *Add link*. Give it a name (`bank`, `school`, `work`) and a website, app or folder. Then type the name in the bar to open it. |
+| **Start at login, Ollama server and model** | Settings. Type `settings` in the bar to open it. |
+| **Your own commands** | Write a small plugin, below. Your commands show up in suggestions and `help` like built-in ones, and you can even replace a built-in command with your own version. |
+
 ## Plugins
 
 Drop a `.js` file into Spark's plugins folder (type `data` to open it) and type `reload`:
@@ -104,7 +116,13 @@ Settings, notes (`notes.md`), to-dos (`todo.txt`) and plugins are kept in your u
 
 ## Build from source
 
-You need [Node.js](https://nodejs.org) 18+ and [Rust](https://rustup.rs), plus the [Tauri prerequisites](https://tauri.app/start/prerequisites/) for your system.
+> **Just want to use Spark?** You don't need any of this. Download it from [Releases](../../releases/latest). The tools below are only for building it yourself.
+
+| You need | Version | Check with |
+| --- | --- | --- |
+| [Node.js](https://nodejs.org) | **20 or newer** (older versions can't run the tests) | `node -v` |
+| [Rust](https://rustup.rs) | latest stable | `rustc -V` |
+| [Tauri prerequisites](https://tauri.app/start/prerequisites/) | for your system (WebView2 on Windows, Xcode tools on macOS, WebKitGTK on Linux) | |
 
 ```bash
 npm install
