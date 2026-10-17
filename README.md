@@ -13,7 +13,7 @@ Windows 10 / 11 · macOS · Linux · light enough for old laptops
 [![Download Spark](https://img.shields.io/badge/Download-Spark-d97757?style=for-the-badge)](https://github.com/Denizprof/spark/releases/latest)
 
 [![Latest release](https://img.shields.io/github/v/release/Denizprof/spark?color=d97757&label=version)](https://github.com/Denizprof/spark/releases/latest)
-![Platforms](https://img.shields.io/badge/Windows%20%C2%B7%20macOS%20%C2%B7%20Linux-555)
+[![Windows · macOS · Linux](https://img.shields.io/badge/Windows%20%C2%B7%20macOS%20%C2%B7%20Linux-555)](https://github.com/Denizprof/spark/releases/latest)
 
 [Commands](#commands) · [Make it yours](#make-it-yours) · [Plugins](#plugins) · [Report a problem](https://github.com/Denizprof/spark/issues/new/choose)
 
