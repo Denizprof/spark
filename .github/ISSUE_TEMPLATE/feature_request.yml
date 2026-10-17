@@ -1,0 +1,16 @@
+name: Idea for a command or feature
+description: Suggest something Spark should do
+labels: [idea]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: Your idea
+      description: What would you type, and what should happen?
+      placeholder: "translate hello to spanish -> hola"
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why would it help you?

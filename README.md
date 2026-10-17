@@ -10,7 +10,13 @@ A tiny command bar for your desktop that opens apps, searches the web, does math
 
 Windows 10 / 11 · macOS · Linux · light enough for old laptops
 
-[**Download**](../../releases/latest) · [Commands](#commands) · [Plugins](#plugins) · [Build from source](#build-from-source)
+[![Download Spark](https://img.shields.io/badge/Download-Spark-d97757?style=for-the-badge)](https://github.com/Denizprof/spark/releases/latest)
+
+[![Latest release](https://img.shields.io/github/v/release/Denizprof/spark?color=d97757&label=version)](https://github.com/Denizprof/spark/releases/latest)
+[![Downloads](https://img.shields.io/github/downloads/Denizprof/spark/total?color=555)](https://github.com/Denizprof/spark/releases)
+![Platforms](https://img.shields.io/badge/Windows%20%C2%B7%20macOS%20%C2%B7%20Linux-555)
+
+[Commands](#commands) · [Make it yours](#make-it-yours) · [Plugins](#plugins) · [Report a problem](https://github.com/Denizprof/spark/issues/new/choose)
 
 </div>
 
@@ -28,7 +34,7 @@ Windows 10 / 11 · macOS · Linux · light enough for old laptops
 
 ## Download
 
-Get the latest version from [**Releases**](../../releases/latest):
+Get the latest version from [**Releases**](https://github.com/Denizprof/spark/releases/latest):
 
 | Your computer | File |
 | --- | --- |
@@ -116,7 +122,7 @@ Settings, notes (`notes.md`), to-dos (`todo.txt`) and plugins are kept in your u
 
 ## Build from source
 
-> **Just want to use Spark?** You don't need any of this. Download it from [Releases](../../releases/latest). The tools below are only for building it yourself.
+> **Just want to use Spark?** You don't need any of this. Download it from [Releases](https://github.com/Denizprof/spark/releases/latest). The tools below are only for building it yourself.
 
 | You need | Version | Check with |
 | --- | --- | --- |

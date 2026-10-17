@@ -1,0 +1,34 @@
+name: Something isn't working
+description: Tell us about a bug or a crash
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What did you type or click, and what went wrong?
+      placeholder: I typed "weather paris" and nothing showed up.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+  - type: dropdown
+    id: os
+    attributes:
+      label: Your computer
+      options:
+        - Windows 11
+        - Windows 10
+        - macOS (Apple Silicon)
+        - macOS (Intel)
+        - Linux
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Spark version
+      description: Shown at the top of the Settings window (type `settings` in the bar).
+      placeholder: v1.0.0

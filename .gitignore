@@ -20,3 +20,12 @@ Thumbs.db
 # Built installers
 *.exe
 *.msi
+
+# Marketing video project (local only)
+promo/
+
+# Videos and audio (ads, recordings) - never commit
+*.mp4
+*.mov
+*.mp3
+*.wav
